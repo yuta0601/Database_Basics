@@ -1,0 +1,102 @@
+問1
+SELECT * 
+FROM 受注;
+
+問2
+SELCT 受注番号, 受注合計
+FROM 受注;
+
+問3
+SELECT 受注番号, 受注合計 * 1.08
+FROM 受注;
+
+問4
+SELECT DISTINCT 受注年月日 
+FROM 受注;
+
+問5
+SELECT DISTINCT 受注年月日, 顧客番号
+FROM 受注;
+
+問6
+SELECT *
+FROM 受注
+WHERE 顧客番号=1001;
+
+問7
+SELECT *
+FROM 受注
+WHERE 顧客番号=1001
+AND 受注合計 > 600000;
+
+問8
+SELECT *
+FROM 受注
+WHERE 顧客番号=1001
+OR 受注合計 >= 600000;
+
+問9
+SELECT *
+FROM 受注
+WHERE 顧客番号!=1001;
+
+UPDATE 受注
+SET 受注合計=NULL
+WHERE 受注番号=00005;
+
+問10
+SELECT 受注番号, 受注合計
+FROM 受注
+WHERE 受注合計 is NULL;
+
+問11
+SELECT 受注番号, 受注合計
+FROM 受注
+WHERE 受注合計 is not NULL;
+
+問12
+SELECT 受注番号, 受注合計
+FROM 受注
+WHERE 受注合計 >= 600000
+AND 受注合計 <= 1000000;
+
+問13
+SELECT 受注番号, 受注合計
+FROM 受注
+WHERE 受注番号 IN (00001, 00004);
+
+問14
+SELECT 受注番号, 受注合計
+FROM 受注
+WHERE 受注番号 NOT IN (00001, 00004);
+
+問15
+SELECT 商品番号, 商品名
+FROM 商品
+WHERE 商品名
+LIKE 'ラ__';
+
+問16
+SELECT 商品番号, 商品名
+FROM 商品 
+WHERE 商品名 
+LIKE '%液晶%';
+
+delete from 受注
+where 受注番号 = 00005;
+
+問17
+SELECT 受注.受注番号, 顧客.顧客番号, 顧客.顧客名
+FROM 受注
+JOIN 顧客
+ON 受注.顧客番号 = 顧客.顧客番号;
+
+問18
+SELECT 受注.受注番号, 受注.顧客番号, 顧客.顧客名, 受注明細.商品番号, 商品.商品名, 商品.単価, 受注明細.数量, 受注明細.受注小計
+FROM 受注
+JOIN 顧客
+ON 受注.顧客番号 = 顧客.顧客番号
+JOIN 受注明細
+ON 受注.受注番号 = 受注明細.受注番号
+JOIN 商品
+ON 受注明細.商品番号 = 商品.商品番号
