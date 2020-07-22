@@ -49,8 +49,11 @@ insert into 受注明細 values('00002', 'S05',  6,  18000);
 insert into 受注明細 values('00002', 'A11', 10, 500000);
 insert into 受注明細 values('00003', 'A01',  3, 600000);
 insert into 受注明細 values('00004', 'S05',  1,   3000);
+INSERT INTO 受注明細 VALUES("99999", "Z99", 99, 9999);
 
 insert into 商品 values('A01', 'テレビ（液晶大型）', 200000);
 insert into 商品 values('A11', 'テレビ（液晶小型）',  50000);
 insert into 商品 values('G02', 'DVDレコーダ',         80000);
 insert into 商品 values('S05', 'ラジオ',               3000);
+INSERT INTO 商品 values('Z01', '冷蔵庫', 180000);
+INSERT INTO 商品 values('Z11', 'エアコン',  80000);
